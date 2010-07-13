@@ -16,7 +16,7 @@ options = { :choices => '1,2' }
 #   TEST HARNESS CODE   #
 #########################
 
-sequencer('c00').each{|url|p url}
+sequencer('c00').each{|url|say "#{url}"}
 
 #########################
 # END TEST HARNESS CODE #
@@ -25,7 +25,7 @@ sequencer('c00').each{|url|p url}
 result = ask 'Hi. For sales, press 1. For support, press 2.', options
 
 if result.name == 'choice'
-  sequencer('c01').each{|url|p url}
+  sequencer('c01').each{|url|say "#{url}"}
 
   case result.value
     when '1'
@@ -36,7 +36,7 @@ if result.name == 'choice'
 	  say 'support is currently on the other line.'
 	end
 end
-  sequencer('c03').each{|url|p url}
+  sequencer('c03').each{|url|say "#{url}"}
 hangup
 
 
