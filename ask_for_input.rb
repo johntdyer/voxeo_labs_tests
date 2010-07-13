@@ -1,4 +1,6 @@
-def nubot_tester(v)
+prompt_repeat_counter=0
+
+def nubot_dtmf(v)
   @RESOURCE_URL='http://github.com/krumpt/voxeo_labs_tests/raw/master/dtmf/'
   return_array = Array.new
 
@@ -8,11 +10,11 @@ def nubot_tester(v)
   }
 end
 
+
+
 answer
 
-prompt_counter=0
-
-nubot_tester("a1#{prompt_counter.to_s}")
+nubot_dtmf("a1#{prompt_repeat_counter.to_s}")
 
 wait(3000)
 
@@ -21,7 +23,7 @@ options = {
         :repeat=>'2',
         :timeout=>2,
         :onTimeout=> lambda {
-                |event| prompt_counter+=1;nubot_tester("a1#{prompt_counter.to_s}")
+                |event| prompt_repeat_counter+=1;nubot_dtmf("a1#{prompt_repeat_counter.to_s}")
         }
       }
 
@@ -29,18 +31,18 @@ options = {
 result = ask 'Hi. For sales, press 1. For support, press 2.', options
 
 if result.name == 'choice'
-  nubot_tester('b12')
+  nubot_dtmf('b12')
 
   case result.value
     when '1'
-      nubot_tester('c10')
+      nubot_dtmf('c10')
       say 'sales is not available right now.'
     when '2'
-      nubot_tester('c20')
+      nubot_dtmf('c20')
 	  say 'support is currently on the other line.'
 	end
 end
-  nubot_tester('c03')
+  nubot_dtmf('c03')
 hangup
 
 
