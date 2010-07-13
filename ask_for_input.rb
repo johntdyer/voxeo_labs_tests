@@ -4,7 +4,7 @@ def sequencer(v)
   return_array = Array.new
 
   v.to_s.split(//).each {|e|
-       return_array<<@RESOURCE_URL+e+'.wav'
+       say "{@RESOURCE_URL+e+'.wav'}"
   }
   return return_array
 end
@@ -16,7 +16,8 @@ options = { :choices => '1,2' }
 #   TEST HARNESS CODE   #
 #########################
 
-sequencer('c00').each{|url|say "#{url}"}
+sequencer('c00')
+#.each{|url|say "#{url}"}
 
 #########################
 # END TEST HARNESS CODE #
