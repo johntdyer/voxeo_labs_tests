@@ -24,7 +24,7 @@ options = {
       }
 
 
-nubot_tester('c1#{prompt_counter}')
+nubot_tester('c1#{prompt_counter.to_s}')
 
 
 result = ask 'Hi. For sales, press 1. For support, press 2.', options
