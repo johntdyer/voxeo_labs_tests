@@ -5,21 +5,23 @@ def nubot_tester(v)
   v.to_s.split(//).each {|e|
        say "#{@RESOURCE_URL+e+'.wav'}"
   }
-  return return_array
 end
 
 answer
+
+prompt_counter=0
+
+
 wait(3000)
-options = { :choices => '1,2' }
+options = { :choices => '1,2',:repeat=>'2',:onTimeout=> lambda { |event| prompt_counter=+1; log "@"*5 +prompt_counter } }
 
-
-nubot_tester('c11')
+nubot_tester('c1#{prompt_counter}')
 
 
 result = ask 'Hi. For sales, press 1. For support, press 2.', options
 
 if result.name == 'choice'
-  nubot_tester('c11')
+  nubot_tester('c12')
 
   case result.value
     when '1'
