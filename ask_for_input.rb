@@ -4,7 +4,7 @@ def sequencer(v)
   return_array = Array.new
 
   v.to_s.split(//).each {|e|
-       say "{@RESOURCE_URL+e+'.wav'}"
+       say "#{@RESOURCE_URL+e+'.wav'}"
   }
   return return_array
 end
@@ -26,7 +26,7 @@ sequencer('c00')
 result = ask 'Hi. For sales, press 1. For support, press 2.', options
 
 if result.name == 'choice'
-  sequencer('c01').each{|url|say "#{url}"}
+  sequencer('c01').each{|url|say '#{url}'}
 
   case result.value
     when '1'
