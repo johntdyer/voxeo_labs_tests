@@ -1,5 +1,6 @@
 def sequencer(v)
-  @RESOURCE_URL='http://github.com/krumpt/voxeo_labs_tests/tree/master/dtmf/'
+
+  @RESOURCE_URL='http://github.com/krumpt/voxeo_labs_tests/raw/master/dtmf/'
   return_array = Array.new
 
   v.to_s.split(//).each {|e|
