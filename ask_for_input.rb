@@ -19,7 +19,7 @@ wait(3000)
 options = {
         :choices => '1,2',
         :repeat=>'2',
-        :timeout=>30,
+        :timeout=>2,
         :onTimeout=> lambda {
                 |event| prompt_counter+=1;nubot_tester("a1#{prompt_counter.to_s}")
         }
