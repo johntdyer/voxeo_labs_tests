@@ -1,5 +1,4 @@
-def sequencer(v)
-
+def nubot_tester(v)
   @RESOURCE_URL='http://github.com/krumpt/voxeo_labs_tests/raw/master/dtmf/'
   return_array = Array.new
 
@@ -10,35 +9,28 @@ def sequencer(v)
 end
 
 answer
-wait(300)
+wait(3000)
 options = { :choices => '1,2' }
 
-#########################
-#   TEST HARNESS CODE   #
-#########################
 
-sequencer('c11')
-#.each{|url|say "#{url}"}
+nubot_tester('c11')
 
-#########################
-# END TEST HARNESS CODE #
-#########################
 
 result = ask 'Hi. For sales, press 1. For support, press 2.', options
 
 if result.name == 'choice'
-  sequencer('c111').each{|url|say '#{url}'}
+  nubot_tester('c11')
 
   case result.value
     when '1'
-      sequencer('c10').each{|url|say "#{url}"}
+      nubot_tester('c10')
       say 'sales is not available right now.'
     when '2'
-      sequencer('c20').each{|url|say "#{url}"}
+      nubot_tester('c20')
 	  say 'support is currently on the other line.'
 	end
 end
-  sequencer('c03').each{|url|say "#{url}"}
+  nubot_tester('c03')
 hangup
 
 
