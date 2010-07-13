@@ -3,6 +3,7 @@ def nubot_tester(v)
   return_array = Array.new
 
   v.to_s.split(//).each {|e|
+       log "@@ NUBOT DTMF @@ #{e}.wav"
        say "#{@RESOURCE_URL+e+'.wav'}"
   }
 end
@@ -14,6 +15,7 @@ prompt_counter=0
 
 wait(3000)
 options = { :choices => '1,2',:repeat=>'2',:onTimeout=> lambda { |event| prompt_counter=+1; log "@"*5 +prompt_counter } }
+
 
 nubot_tester('c1#{prompt_counter}')
 
