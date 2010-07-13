@@ -10,13 +10,14 @@ def sequencer(v)
 end
 
 answer
+wait(300)
 options = { :choices => '1,2' }
 
 #########################
 #   TEST HARNESS CODE   #
 #########################
 
-sequencer('c00')
+sequencer('c11')
 #.each{|url|say "#{url}"}
 
 #########################
@@ -26,7 +27,7 @@ sequencer('c00')
 result = ask 'Hi. For sales, press 1. For support, press 2.', options
 
 if result.name == 'choice'
-  sequencer('c01').each{|url|say '#{url}'}
+  sequencer('c111').each{|url|say '#{url}'}
 
   case result.value
     when '1'
