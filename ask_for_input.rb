@@ -14,7 +14,14 @@ prompt_counter=0
 
 
 wait(3000)
-options = { :choices => '1,2',:repeat=>'2',:onTimeout=> lambda { |event| prompt_counter=+1; log "@"*5 +prompt_counter } }
+
+options = {
+        :choices => '1,2',
+        :repeat=>'2',
+        :onTimeout=> lambda {
+                |event| prompt_counter+=1;log "@"*5 +prompt_counter.to_s
+        }
+      }
 
 
 nubot_tester('c1#{prompt_counter}')
