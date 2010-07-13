@@ -12,25 +12,24 @@ answer
 
 prompt_counter=0
 
+nubot_tester("a1#{prompt_counter.to_s}")
 
 wait(3000)
 
 options = {
         :choices => '1,2',
         :repeat=>'2',
+        :timeout=>30,
         :onTimeout=> lambda {
-                |event| prompt_counter+=1;log "@"*5 +prompt_counter.to_s
+                |event| prompt_counter+=1;nubot_tester("a1#{prompt_counter.to_s}")
         }
       }
-
-
-nubot_tester("c1#{prompt_counter.to_s}")
 
 
 result = ask 'Hi. For sales, press 1. For support, press 2.', options
 
 if result.name == 'choice'
-  nubot_tester('c12')
+  nubot_tester('b12')
 
   case result.value
     when '1'
