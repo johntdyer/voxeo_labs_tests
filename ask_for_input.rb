@@ -1,9 +1,7 @@
-prompt_repeat_counter=0
+prompt_counter=0
 
 def nubot_dtmf(v)
   @RESOURCE_URL='http://github.com/krumpt/voxeo_labs_tests/raw/master/dtmf/'
-  return_array = Array.new
-
   v.to_s.split(//).each {|e|
        log "@@ NUBOT DTMF @@ #{e}.wav"
        say "#{@RESOURCE_URL+e+'.wav'}"
@@ -14,7 +12,7 @@ end
 
 answer
 
-nubot_dtmf("a1#{prompt_repeat_counter.to_s}")
+nubot_dtmf("a1#{prompt_counter.to_s}")
 
 wait(3000)
 
@@ -23,7 +21,7 @@ options = {
         :repeat=>'2',
         :timeout=>2,
         :onTimeout=> lambda {
-                |event| prompt_repeat_counter+=1;nubot_dtmf("a1#{prompt_repeat_counter.to_s}")
+                |event| prompt_counter+=1;nubot_dtmf("a1#{prompt_counter.to_s}")
         }
       }
 
