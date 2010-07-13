@@ -28,10 +28,10 @@ if result.name == 'choice'
 
   case result.value
     when '1'
-      sequencer('c10').each{|url|p url}
+      sequencer('c10').each{|url|say url}
       say 'sales is not available right now.'
     when '2'
-      sequencer('c20').each{|url|p url}
+      sequencer('c20').each{|url|say url}
 	  say 'support is currently on the other line.'
 	end
 end
