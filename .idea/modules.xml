@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/voxeo_labs_tests.iml" filepath="$PROJECT_DIR$/.idea/voxeo_labs_tests.iml" />
+      <module fileurl="file:///Users/dyer/RubymineProjects/nuBot/voxeo_labs_tests/.idea/voxeo_labs_tests.iml" filepath="/Users/dyer/RubymineProjects/nuBot/voxeo_labs_tests/.idea/voxeo_labs_tests.iml" />
     </modules>
   </component>
 </project>
